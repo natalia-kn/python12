@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_album.css') }}">
+</head>
+<body>
+<h1>Альбоми</h1>
+<form method="POST">
+    <table>
+        <tr>
+            <th>Рік</th>
+            <th>Назва</th>
+            <th>Дата виходу</th>
+            <th>Позиція в чартах</th>
+        </tr>
+        <tr>
+            <td>2013</td>
+            <td>I LOVE TOU</td>
+            <td> 23 квітня 2013</td>
+            <td> 25</td>
+        </tr>
+        <tr>
+            <td>2015</td>
+            <td>WIPED OUT!</td>
+            <td> 30 жовтня 2015</td>
+            <td> 13</td>
+        </tr>
+        <tr>
+            <td>2018</td>
+            <td><a href="/third">The Neighbourhood</a></td>
+            <td> 25 вересня 2018</td>
+            <td> 4</td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

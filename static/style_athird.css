@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1, h2
+{
+    text-align: center;
+    color: grey;
+}
+h2
+{
+color:black;
+}
+ul
+{
+text-align:center;
+margin: 0 auto;
+}
+li
+{
+color: gray;
+}

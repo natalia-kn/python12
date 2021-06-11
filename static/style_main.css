@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1, h2
+{
+    text-align: center;
+   }
+
+h2
+{
+color: grey}
+
+img
+{
+    height:400px;
+    width:700px;
+
+}
+div
+{
+   text-align: center;
+}
+ul>li{
+    display: inline;
+    padding: 5%;
+    list-style: none;
+
+}
+ul{
+    text-align: center;
+
+
+}
+a{
+   text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}

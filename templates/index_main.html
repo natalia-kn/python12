@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_main.css') }}">
+</head>
+<body>
+{% block nav %}
+<h1>Головна</h1>
+<h2>Neighbourhood</h2>
+<div><img src="/static/c0956398085c68dc515cbd34f24166ee.jpg"></div>
+<ul>
+    <li><a href="/about">Про проект</a></li>
+    <li><a href="/history">Історія гурту</a></li>
+    <li><a href="/album">Альбоми</a></li>
+    <li><a href="/login">Авторизація</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+{% endblock %}
+</body>
+</html>
