@@ -1,44 +1,25 @@
-from flask import Flask, redirect, request, render_template, flash, url_for, make_response
+"""
+This script runs the application using a development server.
+It contains the definition of routes and views for the application.
+"""
+from flask import Flask
+from ApplicationContext import *
+from Controllers.Admin.AdminController import *
+from Controllers.HomePageController import *
+from Controllers.AccountController import *
+from Controllers.AlbumController import *
+from DatabaseContext import db
 
-app = Flask(__name__)
+db.create_all()
 
-@app.route('/')
-def index():
-    return render_template('index_main.html')
+# Make the WSGI interface available at the top level so wfastcgi can get it.
+wsgi_app = app.wsgi_app
 
-
-@app.route('/login', methods=['post', 'get'])
-def login():
-    message = ''
-    if request.method == 'POST':
-        username = request.form.get('username')  # Запит до даних форм
-        password = request.form.get('password')
-        if username == 'user' and password == 'user':
-            message = "Авторизовано"
-        else:
-            message = "Помилка при авторизації"
-    return render_template('login.html', message=message)
-
-
-@app.route('/about')
-def index_about():
-    return render_template('about.html')
-
-
-@app.route('/album')
-def index_album():
-    return render_template('album.html')
-
-
-@app.route('/history')
-def index_history():
-    return render_template('history.html')
-
-@app.route('/third')
-def index_third():
-    return render_template('third_album.html')
-
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    import os
+    HOST = os.environ.get('SERVER_HOST', 'localhost')
+    try:
+        PORT = int(os.environ.get('SERVER_PORT', '5555'))
+    except ValueError:
+        PORT = 5555
+    app.run(HOST, PORT)
